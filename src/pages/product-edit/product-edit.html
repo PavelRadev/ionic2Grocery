@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons begin>
+      <button ion-button (click)="closeModal()">
+        Cancel
+      </button>
+    </ion-buttons>
+
+    <ion-title>Add new list item</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="doneClicked()">
+        Done
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="text-center">
+    <h6>Add new list item</h6>
+  </div>
+
+  <ion-item *ngIf="model">
+
+    <ion-input type="text" maxlength="27" [(ngModel)]="model.name" (ngModelChange)="countInputCharactersLeft()"></ion-input>
+  </ion-item>
+  <ion-label color="primary" text-right stacked>Characters left {{inputCharactersLeft}}</ion-label>
+</ion-content>

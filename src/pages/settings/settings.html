@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons begin>
+      <button ion-button (click)="createItem()">
+        <ion-icon ios="ios-add" md="ios-add"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Groceries</ion-title>
+
+    <ion-buttons end>
+      <button ion-button (click)="doneClicked()">
+        Done
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let item of groceriesList">
+
+    <ion-icon (click)="deleteItem(item.id)" ios="ios-remove-circle" md="ios-remove-circle" color="danger"></ion-icon>
+    <ion-icon ios="ios-create-outline" md="ios-create-outline" (click)="editItem(item)"></ion-icon>
+
+
+    {{item.name}}
+  </ion-item>
+</ion-content>
+
