@@ -6,6 +6,9 @@ import {BaseClientServiceNonHttp} from "./BaseClientServiceNonHttp";
 export class GroceriesService extends BaseClientServiceNonHttp<ProductModel>{
   constructor(){
     super();
+  }
+
+  initializeList(){
     this.fakeItemsList = [
       new ProductModel('1','Milk 1l'),
       new ProductModel('2','Eggs Medium 12 pack'),
@@ -17,7 +20,5 @@ export class GroceriesService extends BaseClientServiceNonHttp<ProductModel>{
       new ProductModel('8','Orange juice 1l'),
       new ProductModel('9','Tomatoes')
     ];
-
-    this.emitListUpdateSubject();
   }
 }

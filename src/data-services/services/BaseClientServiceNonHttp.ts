@@ -12,7 +12,12 @@ export abstract class BaseClientServiceNonHttp<T extends IIdentifiable> implemen
 
   public fakeItemsList$ = new ReplaySubject<T[]>(1);
 
-  constructor(){}
+  constructor(){
+    this.initializeList();
+    this.emitListUpdateSubject();
+  }
+
+  protected abstract initializeList()
 
   getAll(params: any): Observable<T[]> {
     return this.fakeItemsList$.asObservable();
